@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- กรอบไฮไลต์ใบหน้าที่เลือก วางทับกรอบในภาพ mockup -->
+<shape xmlns:android="http://schemas.android.com/apk/res/android" android:shape="rectangle">
+    <solid android:color="#3D3A8DFF" />
+    <corners android:radius="18dp" />
+    <stroke android:width="3dp" android:color="#2F8CF0" />
+</shape>

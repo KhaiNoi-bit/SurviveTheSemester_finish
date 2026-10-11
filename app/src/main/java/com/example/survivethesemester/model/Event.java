@@ -26,6 +26,8 @@ public class Event {
     }
 
     public final String emoji, title, description;
+    /** ชื่อฉากพื้นหลังของ EventActivity: rain | group | shabu | club | nonet */
+    public String scene = "group";
     public final List<Option> options = new ArrayList<>();
     public int subjectIndex = -1;
 
@@ -43,6 +45,7 @@ public class Event {
 
     public static Event friendDinner() {
         Event e = new Event("🍜", "เพื่อนชวนไปทานข้าว", "เพื่อนชวนไปกินมื้อยาวแบบไม่อายใคร อาหารอร่อย แต่ต้องตัดสินใจเร็ว");
+        e.scene = "shabu";
         e.options.add(new Option("ไปร่วมกัน", "😊 +18 / 💰 -120 / 😰 +6", 0, -6, 18, 6, -120));
         e.options.add(new Option("ปฏิเสธและกลับห้อง", "📚 +8 / ⚡ -4", 8, -4, 0, 0, 0));
         e.options.add(new Option("ชวนเพื่อนมาคุยที่ห้อง", "😊 +10 / 💰 0", 4, -4, 10, 0, 0));
@@ -51,6 +54,7 @@ public class Event {
 
     public static Event rainDelay() {
         Event e = new Event("🌧️", "ฝนตกหนักก่อนเข้าเรียน", "ถนนลื่นและรถติด กว่าจะถึงคณะก็ต้องใช้เวลาเยอะ");
+        e.scene = "rain";
         e.options.add(new Option("รอรถเมล์", "เสียเวลา 1 Action", 0, 0, 0, 0, 0).cost(1));
         e.options.add(new Option("วิ่งไปเรียน", "⚡ -14 / 😰 +8", 0, -14, 0, 8, 0));
         e.options.add(new Option("ขอยืมรถเพื่อน", "💰 -40 / 😊 +4", 0, -4, 4, 0, -40));
@@ -59,6 +63,7 @@ public class Event {
 
     public static Event laptopCrash() {
         Event e = new Event("💻", "คอมพิวเตอร์ค้าง", "ไฟล์งานที่ต้องส่งหายตอน Save สุดท้าย");
+        e.scene = "nonet";
         e.options.add(new Option("โทรซ่อมด่วน", "💰 -180 / ⚡ -8", 0, -8, 0, 0, -180));
         e.options.add(new Option("ขอเพื่อนช่วย", "😊 -4 / 📚 +6", 6, -4, -4, 0, 0));
         e.options.add(new Option("ลาและเริ่มใหม่", "📚 -12 / 😰 +10", -12, -6, 0, 10, 0));
@@ -67,6 +72,7 @@ public class Event {
 
     public static Event groupProject() {
         Event e = new Event("🤝", "เพื่อนขอร่วมงานกลุ่ม", "มีคนเข้ามาเสนอให้ร่วมทำ project ทันที");
+        e.scene = "group";
         e.options.add(new Option("ร่วมกันทำ", "📚 +12 / 😊 +8 / ⚡ -10", 12, -10, 8, 2, 0));
         e.options.add(new Option("ทำคนเดียวแทน", "📚 +8 / 😰 +12", 8, -8, 0, 12, 0));
         e.options.add(new Option("ปฏิเสธก่อน", "😊 -6 / 😰 -4", 0, 0, -6, -4, 0));
@@ -75,6 +81,7 @@ public class Event {
 
     public static Event campusFestival() {
         Event e = new Event("🎉", "งานค่ายมหาวิทยาลัย", "มีบูธอาหารและกิจกรรมเปิดตลาด ทำให้อยากร่วมสนุก");
+        e.scene = "club";
         e.options.add(new Option("ไปเที่ยวสักชั่วโมง", "😊 +16 / ⚡ -12 / 💰 -80", 0, -12, 16, 0, -80));
         e.options.add(new Option("ช่วยจัดงาน", "😊 +10 / 📚 +4 / 😰 +5", 4, -6, 10, 5, 0));
         e.options.add(new Option("เว้นไว้ก่อน", "📚 +6 / 😰 -2", 6, 0, 0, -2, 0));
@@ -83,6 +90,7 @@ public class Event {
 
     public static Event roommateNoise() {
         Event e = new Event("🏠", "เพื่อนบ้านดังมาก", "เสียงดังรบกวนจนคุณแทบไม่ทำงานได้");
+        e.scene = "group";
         e.options.add(new Option("ไปคุยปรับความเข้าใจ", "😊 +8 / 😰 -8", 0, 0, 8, -8, 0));
         e.options.add(new Option("ปิดประตูและทำงานต่อ", "📚 +5 / ⚡ -8", 5, -8, 0, 4, 0));
         e.options.add(new Option("ออกไปชิลที่ร้านกาแฟ", "😊 +12 / 💰 -70", 0, -4, 12, 2, -70));
@@ -91,6 +99,7 @@ public class Event {
 
     public static Event examWarning() {
         Event e = new Event("📣", "อาจารย์แจ้งล่วงหน้า", "มีการคาดการณ์ว่ามีสอบย่อยในช่วงถัดไป");
+        e.scene = "club";
         e.options.add(new Option("ทบทวนก่อนสอบ", "📚 +14 / ⚡ -10", 14, -10, 0, 6, 0));
         e.options.add(new Option("อ่านแค่สรุปสั้น", "📚 +8 / 😰 +8", 8, -6, 0, 8, 0));
         e.options.add(new Option("เลี่ยงและทำอย่างอื่น", "😊 +6 / 📚 -10", -10, -4, 6, 0, 0));
@@ -99,6 +108,7 @@ public class Event {
 
     public static Event scholarshipDeal() {
         Event e = new Event("🏆", "ทุนกิจกรรมเปิด", "มีโอกาสรับทุนหรือประสบการณ์ bonus ถ้าทำงานให้ครบ");
+        e.scene = "club";
         e.options.add(new Option("สมัครทันที", "💰 +120 / ⚡ -8 / 😰 +6", 4, -8, 0, 6, 120));
         e.options.add(new Option("ใช้เวลาเตรียมเอกสาร", "📚 +10 / ⚡ -12", 10, -12, 0, 6, 0));
         e.options.add(new Option("ไม่สนใจ", "😊 +2", 0, 0, 2, 0, 0));
@@ -120,6 +130,7 @@ public class Event {
         String title = titles[r.nextInt(titles.length)];
         Event e = new Event(emoji, title, "วิชา " + subjectName + " มีภารกิจที่ต้องจัดการให้ทัน");
         e.subjectIndex = subjectIndex;
+        e.scene = "nonet";
         e.options.add(new Option("ทำทันที", "📚 +14 / ⚡ -18 / 😰 +8", 14, -18, 0, 8, 0).subj(12));
         e.options.add(new Option("แบ่งเวลาทำ", "📚 +10 / ⚡ -10 / มีโอกาสลืม", 10, -10, 0, 6, 0).subj(8).risk(35, -8, -8));
         e.options.add(new Option("เลื่อนส่ง", "📚 -10 / 😰 +12", -10, -4, 0, 12, 0).subj(-14));

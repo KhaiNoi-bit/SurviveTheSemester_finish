@@ -1,92 +1,118 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<!-- พื้นหลังเป็นภาพ mockup ขนาดอ้างอิง 940x2100 ; ทุก view วางด้วย Guideline แบบ % จึงตรงกับกรอบในภาพทุกขนาดจอ -->
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/root"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/navy"
-    android:orientation="vertical">
+    android:background="@drawable/bg_root_main">
 
-    <include
-        android:id="@+id/layoutHeader"
-        layout="@layout/layout_header"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
-
-    <ScrollView
-        android:layout_width="match_parent"
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/stage"
+        android:layout_width="0dp"
         android:layout_height="0dp"
-        android:layout_weight="1"
-        android:background="@drawable/bg_scroll">
+        app:layout_constraintDimensionRatio="940:2100"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
+        <ImageView
+            android:id="@+id/ivBg"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:importantForAccessibility="no"
+            android:scaleType="fitXY"
+            android:src="@drawable/bg_main" />
+
+    <androidx.constraintlayout.widget.Guideline android:id="@+id/gx_20" android:layout_width="wrap_content" android:layout_height="wrap_content" android:orientation="vertical" app:layout_constraintGuide_percent="0.0213" />
+    <androidx.constraintlayout.widget.Guideline android:id="@+id/gx_35" android:layout_width="wrap_content" android:layout_height="wrap_content" android:orientation="vertical" app:layout_constraintGuide_percent="0.0372" />
+    <androidx.constraintlayout.widget.Guideline android:id="@+id/gx_36" android:layout_width="wrap_content" android:layout_height="wrap_content" android:orientation="vertical" app:layout_constraintGuide_percent="0.0383" />
+    <androidx.constraintlayout.widget.Guideline android:id="@+id/gx_62" android:layout_width="wrap_content" android:layout_height="wrap_content" android:orientation="vertical" app:layout_constraintGuide_percent="0.0660" />
+    <androidx.constraintlayout.widget.Guideline android:id="@+id/gx_232" android:layout_width="wrap_content" android:layout_height="wrap_content" android:orientation="vertical" app:layout_constraintGuide_percent="0.2468" />
+    <androidx.constraintlayout.widget.Guideline android:id="@+id/gx_260" android:layout_width="wrap_content" android:layout_height="wrap_content" android:orientation="vertical" app:layout_constraintGuide_percent="0.2766" />
+    <androidx.constraintlayout.widget.Guideline android:id="@+id/gx_275" android:layout_width="wrap_content" android:layout_height="wrap_content" android:orientation="vertical" app:layout_constraintGuide_percent="0.2926" />
+    <androidx.constraintlayout.widget.Guideline android:id="@+id/gx_290" android:layout_width="wrap_content" android:layout_height="wrap_content" android:orientation="vertical" app:layout_constraintGuide_percent="0.3085" />
+    <androidx.constraintlayout.widget.Guideline android:id="@+id/gx_300" android:layout_width="wrap_content" android:layout_height="wrap_content" android:orientation="vertical" app:layout_constraintGuide_percent="0.3191" />
+    <androidx.constraintlayout.widget.Guideline android:id="@+id/gx_352" android:layout_width="wrap_content" android:layout_height="wrap_content" android:orientation="vertical" app:layout_constraintGuide_percent="0.3745" />
+    <androidx.constraintlayout.widget.Guideline android:id="@+id/gx_457" android:layout_width="wrap_content" android:layout_height="wrap_content" android:orientation="vertical" app:layout_constraintGuide_percent="0.4862" />
+    <androidx.constraintlayout.widget.Guideline android:id="@+id/gx_484" android:layout_width="wrap_content" android:layout_height="wrap_content" android:orientation="vertical" app:layout_constraintGuide_percent="0.5149" />
+    <androidx.constraintlayout.widget.Guideline android:id="@+id/gx_530" android:layout_width="wrap_content" android:layout_height="wrap_content" android:orientation="vertical" app:layout_constraintGuide_percent="0.5638" />
+    <androidx.constraintlayout.widget.Guideline android:id="@+id/gx_680" android:layout_width="wrap_content" android:layout_height="wrap_content" android:orientation="vertical" app:layout_constraintGuide_percent="0.7234" />
+    <androidx.constraintlayout.widget.Guideline android:id="@+id/gx_708" android:layout_width="wrap_content" android:layout_height="wrap_content" android:orientation="vertical" app:layout_constraintGuide_percent="0.7532" />
+    <androidx.constraintlayout.widget.Guideline android:id="@+id/gx_715" android:layout_width="wrap_content" android:layout_height="wrap_content" android:orientation="vertical" app:layout_constraintGuide_percent="0.7606" />
+    <androidx.constraintlayout.widget.Guideline android:id="@+id/gx_745" android:layout_width="wrap_content" android:layout_height="wrap_content" android:orientation="vertical" app:layout_constraintGuide_percent="0.7926" />
+    <androidx.constraintlayout.widget.Guideline android:id="@+id/gx_880" android:layout_width="wrap_content" android:layout_height="wrap_content" android:orientation="vertical" app:layout_constraintGuide_percent="0.9362" />
+    <androidx.constraintlayout.widget.Guideline android:id="@+id/gx_888" android:layout_width="wrap_content" android:layout_height="wrap_content" android:orientation="vertical" app:layout_constraintGuide_percent="0.9447" />
+    <androidx.constraintlayout.widget.Guideline android:id="@+id/gx_893" android:layout_width="wrap_content" android:layout_height="wrap_content" android:orientation="vertical" app:layout_constraintGuide_percent="0.9500" />
+    <androidx.constraintlayout.widget.Guideline android:id="@+id/gx_895" android:layout_width="wrap_content" android:layout_height="wrap_content" android:orientation="vertical" app:layout_constraintGuide_percent="0.9521" />
+    <androidx.constraintlayout.widget.Guideline android:id="@+id/gx_905" android:layout_width="wrap_content" android:layout_height="wrap_content" android:orientation="vertical" app:layout_constraintGuide_percent="0.9628" />
+    <androidx.constraintlayout.widget.Guideline android:id="@+id/gy_62" android:layout_width="wrap_content" android:layout_height="wrap_content" android:orientation="horizontal" app:layout_constraintGuide_percent="0.0295" />
+    <androidx.constraintlayout.widget.Guideline android:id="@+id/gy_66" android:layout_width="wrap_content" android:layout_height="wrap_content" android:orientation="horizontal" app:layout_constraintGuide_percent="0.0314" />
+    <androidx.constraintlayout.widget.Guideline android:id="@+id/gy_148" android:layout_width="wrap_content" android:layout_height="wrap_content" android:orientation="horizontal" app:layout_constraintGuide_percent="0.0705" />
+    <androidx.constraintlayout.widget.Guideline android:id="@+id/gy_152" android:layout_width="wrap_content" android:layout_height="wrap_content" android:orientation="horizontal" app:layout_constraintGuide_percent="0.0724" />
+    <androidx.constraintlayout.widget.Guideline android:id="@+id/gy_168" android:layout_width="wrap_content" android:layout_height="wrap_content" android:orientation="horizontal" app:layout_constraintGuide_percent="0.0800" />
+    <androidx.constraintlayout.widget.Guideline android:id="@+id/gy_228" android:layout_width="wrap_content" android:layout_height="wrap_content" android:orientation="horizontal" app:layout_constraintGuide_percent="0.1086" />
+    <androidx.constraintlayout.widget.Guideline android:id="@+id/gy_236" android:layout_width="wrap_content" android:layout_height="wrap_content" android:orientation="horizontal" app:layout_constraintGuide_percent="0.1124" />
+    <androidx.constraintlayout.widget.Guideline android:id="@+id/gy_308" android:layout_width="wrap_content" android:layout_height="wrap_content" android:orientation="horizontal" app:layout_constraintGuide_percent="0.1467" />
+    <androidx.constraintlayout.widget.Guideline android:id="@+id/gy_362" android:layout_width="wrap_content" android:layout_height="wrap_content" android:orientation="horizontal" app:layout_constraintGuide_percent="0.1724" />
+    <androidx.constraintlayout.widget.Guideline android:id="@+id/gy_478" android:layout_width="wrap_content" android:layout_height="wrap_content" android:orientation="horizontal" app:layout_constraintGuide_percent="0.2276" />
+    <androidx.constraintlayout.widget.Guideline android:id="@+id/gy_558" android:layout_width="wrap_content" android:layout_height="wrap_content" android:orientation="horizontal" app:layout_constraintGuide_percent="0.2657" />
+    <androidx.constraintlayout.widget.Guideline android:id="@+id/gy_622" android:layout_width="wrap_content" android:layout_height="wrap_content" android:orientation="horizontal" app:layout_constraintGuide_percent="0.2962" />
+    <androidx.constraintlayout.widget.Guideline android:id="@+id/gy_1282" android:layout_width="wrap_content" android:layout_height="wrap_content" android:orientation="horizontal" app:layout_constraintGuide_percent="0.6105" />
+    <androidx.constraintlayout.widget.Guideline android:id="@+id/gy_1358" android:layout_width="wrap_content" android:layout_height="wrap_content" android:orientation="horizontal" app:layout_constraintGuide_percent="0.6467" />
+    <androidx.constraintlayout.widget.Guideline android:id="@+id/gy_1535" android:layout_width="wrap_content" android:layout_height="wrap_content" android:orientation="horizontal" app:layout_constraintGuide_percent="0.7310" />
+
+    <ImageView
+        android:id="@+id/ivFace"
+        android:layout_width="0dp" android:layout_height="0dp"
+        app:layout_constraintStart_toStartOf="@id/gx_20" app:layout_constraintEnd_toEndOf="@id/gx_290"
+        app:layout_constraintTop_toTopOf="@id/gy_236" app:layout_constraintBottom_toBottomOf="@id/gy_558"
+        android:importantForAccessibility="no" android:scaleType="fitCenter" />
+    <TextView
+        android:id="@+id/tvWeek"
+        android:layout_width="0dp" android:layout_height="0dp"
+        app:layout_constraintStart_toStartOf="@id/gx_35" app:layout_constraintEnd_toEndOf="@id/gx_275"
+        app:layout_constraintTop_toTopOf="@id/gy_62" app:layout_constraintBottom_toBottomOf="@id/gy_148"
+        android:gravity="center" android:includeFontPadding="false" android:maxLines="1" android:paddingStart="8dp" android:paddingEnd="8dp" android:textColor="#FFFFFF" android:textStyle="bold" android:autoSizeTextType="uniform" android:autoSizeMinTextSize="9sp" android:autoSizeMaxTextSize="16sp" android:autoSizeStepGranularity="1sp" />
+    <TextView
+        android:id="@+id/tvDay"
+        android:layout_width="0dp" android:layout_height="0dp"
+        app:layout_constraintStart_toStartOf="@id/gx_300" app:layout_constraintEnd_toEndOf="@id/gx_530"
+        app:layout_constraintTop_toTopOf="@id/gy_66" app:layout_constraintBottom_toBottomOf="@id/gy_148"
+        android:gravity="center" android:includeFontPadding="false" android:maxLines="1" android:paddingStart="8dp" android:paddingEnd="8dp" android:textColor="#FFFFFF" android:textStyle="bold" android:autoSizeTextType="uniform" android:autoSizeMinTextSize="9sp" android:autoSizeMaxTextSize="16sp" android:autoSizeStepGranularity="1sp" />
+    <TextView
+        android:id="@+id/tvActions"
+        android:layout_width="0dp" android:layout_height="0dp"
+        app:layout_constraintStart_toStartOf="@id/gx_35" app:layout_constraintEnd_toEndOf="@id/gx_530"
+        app:layout_constraintTop_toTopOf="@id/gy_152" app:layout_constraintBottom_toBottomOf="@id/gy_228"
+        android:gravity="center" android:includeFontPadding="false" android:maxLines="1" android:paddingStart="8dp" android:paddingEnd="8dp" android:textColor="#FFFFFF" android:textStyle="bold" android:autoSizeTextType="uniform" android:autoSizeMinTextSize="9sp" android:autoSizeMaxTextSize="16sp" android:autoSizeStepGranularity="1sp" />
+    <TextView
+        android:id="@+id/tvCoin"
+        android:layout_width="0dp" android:layout_height="0dp"
+        app:layout_constraintStart_toStartOf="@id/gx_715" app:layout_constraintEnd_toEndOf="@id/gx_895"
+        app:layout_constraintTop_toTopOf="@id/gy_62" app:layout_constraintBottom_toBottomOf="@id/gy_148"
+        android:gravity="center" android:includeFontPadding="false" android:maxLines="1" android:paddingStart="8dp" android:paddingEnd="8dp" android:textColor="#FFFFFF" android:textStyle="bold" android:autoSizeTextType="uniform" android:autoSizeMinTextSize="9sp" android:autoSizeMaxTextSize="16sp" android:autoSizeStepGranularity="1sp" />
+    <View
+        android:id="@+id/navLog"
+        android:layout_width="0dp" android:layout_height="0dp"
+        app:layout_constraintStart_toStartOf="@id/gx_745" app:layout_constraintEnd_toEndOf="@id/gx_893"
+        app:layout_constraintTop_toTopOf="@id/gy_168" app:layout_constraintBottom_toBottomOf="@id/gy_308"
+        android:contentDescription="บันทึกเหตุการณ์" android:foreground="?attr/selectableItemBackground" />
+    <TextView
+        android:id="@+id/tvBubble"
+        android:layout_width="0dp" android:layout_height="0dp"
+        app:layout_constraintStart_toStartOf="@id/gx_352" app:layout_constraintEnd_toEndOf="@id/gx_888"
+        app:layout_constraintTop_toTopOf="@id/gy_362" app:layout_constraintBottom_toBottomOf="@id/gy_478"
+        android:gravity="center_vertical" android:maxLines="4" android:paddingStart="6dp" android:paddingEnd="6dp" android:textColor="@color/text_main" android:autoSizeTextType="uniform" android:autoSizeMinTextSize="10sp" android:autoSizeMaxTextSize="15sp" android:autoSizeStepGranularity="1sp" />
+    <ScrollView
+        android:layout_width="0dp" android:layout_height="0dp"
+        app:layout_constraintStart_toStartOf="@id/gx_62" app:layout_constraintEnd_toEndOf="@id/gx_880"
+        app:layout_constraintTop_toTopOf="@id/gy_622" app:layout_constraintBottom_toBottomOf="@id/gy_1282"
+        android:fillViewport="false" android:scrollbars="none">
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:padding="16dp">
-
-            <!-- การ์ดตัวละคร -->
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="@drawable/bg_card_scene"
-                android:orientation="vertical"
-                android:padding="14dp">
-
-                <TextView
-                    android:id="@+id/tvDay"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:background="@drawable/bg_pill"
-                    android:paddingStart="14dp"
-                    android:paddingEnd="14dp"
-                    android:paddingTop="4dp"
-                    android:paddingBottom="4dp"
-                    android:textColor="@color/navy"
-                    android:textSize="14sp"
-                    android:textStyle="bold" />
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="8dp"
-                    android:gravity="center_vertical"
-                    android:orientation="horizontal">
-
-                    <TextView
-                        android:id="@+id/tvFace"
-                        android:layout_width="84dp"
-                        android:layout_height="84dp"
-                        android:background="@drawable/bg_avatar"
-                        android:gravity="center"
-                        android:includeFontPadding="false"
-                        android:textSize="46sp" />
-
-                    <TextView
-                        android:id="@+id/tvBubble"
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="10dp"
-                        android:layout_weight="1"
-                        android:background="@drawable/bg_bubble"
-                        android:padding="12dp"
-                        android:textColor="@color/text_main"
-                        android:textSize="15sp" />
-                </LinearLayout>
-
-                <TextView
-                    android:id="@+id/tvActions"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="10dp"
-                    android:background="@drawable/bg_pill"
-                    android:paddingStart="12dp"
-                    android:paddingEnd="12dp"
-                    android:paddingTop="5dp"
-                    android:paddingBottom="5dp"
-                    android:textColor="@color/navy"
-                    android:textSize="13sp"
-                    android:textStyle="bold" />
-            </LinearLayout>
+            android:orientation="vertical">
 
             <!-- สถานะวิกฤต (เพิ่มจากโค้ด) -->
             <LinearLayout
@@ -95,95 +121,56 @@
                 android:layout_height="wrap_content"
                 android:orientation="vertical" />
 
-            <!-- ค่าสถานะ 5 ค่า -->
-            <LinearLayout
+            <include
+                android:id="@+id/rowStudy"
+                layout="@layout/item_stat"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:background="@drawable/bg_card"
-                android:orientation="vertical"
-                android:padding="14dp">
-
-                <include
-                    android:id="@+id/rowStudy"
-                    layout="@layout/item_stat"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content" />
-                <include
-                    android:id="@+id/rowEnergy"
-                    layout="@layout/item_stat"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content" />
-                <include
-                    android:id="@+id/rowHappy"
-                    layout="@layout/item_stat"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content" />
-                <include
-                    android:id="@+id/rowStress"
-                    layout="@layout/item_stat"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content" />
-                <include
-                    android:id="@+id/rowMoney"
-                    layout="@layout/item_stat"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content" />
-            </LinearLayout>
-
-            <!-- เมนูล่าง -->
-            <LinearLayout
+                android:layout_height="wrap_content" />
+            <include
+                android:id="@+id/rowEnergy"
+                layout="@layout/item_stat"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="14dp"
-                android:orientation="horizontal">
-
-            <TextView
-                android:id="@+id/navActivity"
-                style="@style/NavButton"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="4dp"
-                android:layout_marginEnd="4dp"
-                android:layout_weight="1"
-                android:text="📅\nกิจกรรม" />
-            <TextView
-                android:id="@+id/navStatus"
-                style="@style/NavButton"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="4dp"
-                android:layout_marginEnd="4dp"
-                android:layout_weight="1"
-                android:text="📊\nสถานะ" />
-            <TextView
-                android:id="@+id/navEvent"
-                style="@style/NavButton"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="4dp"
-                android:layout_marginEnd="4dp"
-                android:layout_weight="1"
-                android:text="🎲\nEvent" />
-            <TextView
-                android:id="@+id/navShop"
-                style="@style/NavButton"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="4dp"
-                android:layout_marginEnd="4dp"
-                android:layout_weight="1"
-                android:text="🛒\nShop" />
-            <TextView
-                android:id="@+id/navSave"
-                style="@style/NavButton"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="4dp"
-                android:layout_marginEnd="4dp"
-                android:layout_weight="1"
-                android:text="💾\nเซฟ" />
-            </LinearLayout>
+                android:layout_height="wrap_content" />
+            <include
+                android:id="@+id/rowHappy"
+                layout="@layout/item_stat"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+            <include
+                android:id="@+id/rowStress"
+                layout="@layout/item_stat"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+            <include
+                android:id="@+id/rowMoney"
+                layout="@layout/item_stat"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
         </LinearLayout>
     </ScrollView>
-</LinearLayout>
+    <TextView
+        android:id="@+id/navActivity"
+        android:layout_width="0dp" android:layout_height="0dp"
+        app:layout_constraintStart_toStartOf="@id/gx_36" app:layout_constraintEnd_toEndOf="@id/gx_232"
+        app:layout_constraintTop_toTopOf="@id/gy_1358" app:layout_constraintBottom_toBottomOf="@id/gy_1535"
+        style="@style/NavButton" android:background="@null" android:foreground="?attr/selectableItemBackground" android:paddingTop="0dp" android:paddingBottom="0dp" android:gravity="center" android:text="📅\nกิจกรรม" />
+    <TextView
+        android:id="@+id/navStatus"
+        android:layout_width="0dp" android:layout_height="0dp"
+        app:layout_constraintStart_toStartOf="@id/gx_260" app:layout_constraintEnd_toEndOf="@id/gx_457"
+        app:layout_constraintTop_toTopOf="@id/gy_1358" app:layout_constraintBottom_toBottomOf="@id/gy_1535"
+        style="@style/NavButton" android:background="@null" android:foreground="?attr/selectableItemBackground" android:paddingTop="0dp" android:paddingBottom="0dp" android:gravity="center" android:text="📊\nสถานะ" />
+    <TextView
+        android:id="@+id/navShop"
+        android:layout_width="0dp" android:layout_height="0dp"
+        app:layout_constraintStart_toStartOf="@id/gx_484" app:layout_constraintEnd_toEndOf="@id/gx_680"
+        app:layout_constraintTop_toTopOf="@id/gy_1358" app:layout_constraintBottom_toBottomOf="@id/gy_1535"
+        style="@style/NavButton" android:background="@null" android:foreground="?attr/selectableItemBackground" android:paddingTop="0dp" android:paddingBottom="0dp" android:gravity="center" android:text="🛒\nShop" />
+    <TextView
+        android:id="@+id/navSave"
+        android:layout_width="0dp" android:layout_height="0dp"
+        app:layout_constraintStart_toStartOf="@id/gx_708" app:layout_constraintEnd_toEndOf="@id/gx_905"
+        app:layout_constraintTop_toTopOf="@id/gy_1358" app:layout_constraintBottom_toBottomOf="@id/gy_1535"
+        style="@style/NavButton" android:background="@null" android:foreground="?attr/selectableItemBackground" android:paddingTop="0dp" android:paddingBottom="0dp" android:gravity="center" android:text="💾\nเซฟ" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

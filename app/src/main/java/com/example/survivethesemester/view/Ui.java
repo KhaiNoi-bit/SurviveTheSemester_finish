@@ -30,6 +30,12 @@ public final class Ui {
         return Math.round(v * c.getResources().getDisplayMetrics().density);
     }
 
+    /** รูปหน้าตัวละคร 4 แบบ (face = 0..3) */
+    public static int faceRes(int face) {
+        int[] r = {R.drawable.img_face0, R.drawable.img_face1, R.drawable.img_face2, R.drawable.img_face3};
+        return r[Math.abs(face) % r.length];
+    }
+
     public static int color(Context c, int colorRes) {
         return ContextCompat.getColor(c, colorRes);
     }

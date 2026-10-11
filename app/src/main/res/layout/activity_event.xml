@@ -1,50 +1,54 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<!-- พื้นหลังเป็นภาพ mockup ขนาดอ้างอิง 940x2100 ; ทุก view วางด้วย Guideline แบบ % จึงตรงกับกรอบในภาพทุกขนาดจอ -->
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/root"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/bg_event"
-    android:orientation="vertical">
+    android:background="#544033">
 
-    <include
-        android:id="@+id/layoutHeader"
-        layout="@layout/layout_header"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/stage"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintDimensionRatio="940:2100"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/ivBg"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:importantForAccessibility="no"
+            android:scaleType="fitXY"
+            android:src="@drawable/ev_group" />
+
+    <androidx.constraintlayout.widget.Guideline android:id="@+id/gx_76" android:layout_width="wrap_content" android:layout_height="wrap_content" android:orientation="vertical" app:layout_constraintGuide_percent="0.0809" />
+    <androidx.constraintlayout.widget.Guideline android:id="@+id/gx_866" android:layout_width="wrap_content" android:layout_height="wrap_content" android:orientation="vertical" app:layout_constraintGuide_percent="0.9213" />
+    <androidx.constraintlayout.widget.Guideline android:id="@+id/gy_596" android:layout_width="wrap_content" android:layout_height="wrap_content" android:orientation="horizontal" app:layout_constraintGuide_percent="0.2838" />
+    <androidx.constraintlayout.widget.Guideline android:id="@+id/gy_1420" android:layout_width="wrap_content" android:layout_height="wrap_content" android:orientation="horizontal" app:layout_constraintGuide_percent="0.6762" />
 
     <ScrollView
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1"
-        android:fillViewport="true">
-
+        android:layout_width="0dp" android:layout_height="0dp"
+        app:layout_constraintStart_toStartOf="@id/gx_76" app:layout_constraintEnd_toEndOf="@id/gx_866"
+        app:layout_constraintTop_toTopOf="@id/gy_596" app:layout_constraintBottom_toBottomOf="@id/gy_1420"
+        android:fillViewport="true" android:scrollbars="none">
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@drawable/bg_card"
+            android:gravity="center_vertical"
             android:orientation="vertical"
-            android:layout_gravity="center_vertical"
-            android:layout_margin="20dp"
-            android:padding="18dp">
-
-            <TextView
-                android:id="@+id/tvIcon"
-                android:layout_width="104dp"
-                android:layout_height="104dp"
-                android:layout_gravity="center_horizontal"
-                android:background="@drawable/bg_avatar"
-                android:gravity="center"
-                android:includeFontPadding="false"
-                android:textSize="56sp" />
+            android:paddingTop="6dp"
+            android:paddingBottom="6dp">
 
             <TextView
                 android:id="@+id/tvTitle"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center"
-                android:paddingTop="10dp"
                 android:textColor="@color/text_main"
-                android:textSize="24sp"
+                android:textSize="22sp"
                 android:textStyle="bold" />
 
             <TextView
@@ -52,10 +56,10 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center"
-                android:paddingTop="8dp"
-                android:paddingBottom="8dp"
+                android:paddingTop="6dp"
+                android:paddingBottom="6dp"
                 android:textColor="@color/gray"
-                android:textSize="15sp" />
+                android:textSize="14sp" />
 
             <LinearLayout
                 android:id="@+id/llOptions"
@@ -64,4 +68,5 @@
                 android:orientation="vertical" />
         </LinearLayout>
     </ScrollView>
-</LinearLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

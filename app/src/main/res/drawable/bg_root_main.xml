@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- สีรอบ ๆ ภาพพื้นหลังหน้าหลัก (ใต้แถบสถานะ / ใต้ภาพเมื่อจอยาวมาก) -->
+<shape xmlns:android="http://schemas.android.com/apk/res/android" android:shape="rectangle">
+    <gradient android:angle="270" android:startColor="#56BEFD" android:endColor="#F3F8FC" />
+</shape>

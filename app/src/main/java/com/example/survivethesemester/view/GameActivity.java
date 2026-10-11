@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
@@ -15,7 +16,7 @@ import com.example.survivethesemester.controller.GameController;
 import com.example.survivethesemester.model.Player;
 import com.example.survivethesemester.model.Semester;
 
-/** 3. หน้าหลักในเกม  (layout: activity_game.xml) */
+/** 3. หน้าหลักในเกม  (layout: activity_game.xml — วางทับภาพ bg_main) */
 public class GameActivity extends AppCompatActivity {
 
     @Override
@@ -24,7 +25,7 @@ public class GameActivity extends AppCompatActivity {
         setContentView(R.layout.activity_game);
         Ui.insets(findViewById(R.id.root));
 
-        for (int id : new int[]{R.id.navActivity, R.id.navStatus, R.id.navEvent, R.id.navShop, R.id.navSave}) {
+        for (int id : new int[]{R.id.navActivity, R.id.navStatus, R.id.navShop, R.id.navSave}) {
             Ui.bigFirstLine(findViewById(id));
         }
 
@@ -32,7 +33,7 @@ public class GameActivity extends AppCompatActivity {
                 v -> startActivity(new Intent(this, ActivityActivity.class)));
         findViewById(R.id.navStatus).setOnClickListener(
                 v -> startActivity(new Intent(this, StatusActivity.class)));
-        findViewById(R.id.navEvent).setOnClickListener(v -> showLog());
+        findViewById(R.id.navLog).setOnClickListener(v -> showLog());   // ไอคอนมุมขวาบน = บันทึกเหตุการณ์
         findViewById(R.id.navShop).setOnClickListener(
                 v -> startActivity(new Intent(this, ShopActivity.class)));
         findViewById(R.id.navSave).setOnClickListener(v -> {
@@ -61,14 +62,13 @@ public class GameActivity extends AppCompatActivity {
     private void refresh(GameController g) {
         Player p = g.player;
         Semester s = g.semester;
-        Ui.header(this, "WEEK " + s.week + "  ·  DAY " + s.day, false);
-        Ui.headerRight(this, "🪙 " + String.format(java.util.Locale.US, "%,d", p.money));
-
-        ((TextView) findViewById(R.id.tvDay)).setText(s.dayName() + "   08:00 ─── 22:00");
-        ((TextView) findViewById(R.id.tvFace)).setText(p.faceEmoji());
+        ((TextView) findViewById(R.id.tvWeek)).setText("WEEK " + s.week);
+        ((TextView) findViewById(R.id.tvDay)).setText("DAY " + s.day + " · " + s.dayName());
+        ((TextView) findViewById(R.id.tvCoin)).setText(String.format(java.util.Locale.US, "%,d", p.money));
+        ((ImageView) findViewById(R.id.ivFace)).setImageResource(Ui.faceRes(p.face));
         ((TextView) findViewById(R.id.tvBubble)).setText(g.playerCtl.statusMessage());
-        ((TextView) findViewById(R.id.tvActions)).setText("⏳ วันนี้เหลือ " + s.actionsLeft + "/"
-                + Semester.MAX_ACTIONS + " Actions   ·   สอบปลายภาคอีก " + s.daysLeft() + " วัน");
+        ((TextView) findViewById(R.id.tvActions)).setText("⏳ เหลือ " + s.actionsLeft + "/"
+                + Semester.MAX_ACTIONS + " Actions · สอบอีก " + s.daysLeft() + " วัน");
 
         // สถานะวิกฤต
         LinearLayout warn = findViewById(R.id.llWarnings);
