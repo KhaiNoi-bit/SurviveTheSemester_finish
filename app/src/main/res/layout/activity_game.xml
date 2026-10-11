@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/root"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/navy"
+    android:orientation="vertical">
+
+    <include
+        android:id="@+id/layoutHeader"
+        layout="@layout/layout_header"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:background="@drawable/bg_scroll">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <!-- การ์ดตัวละคร -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_card_scene"
+                android:orientation="vertical"
+                android:padding="14dp">
+
+                <TextView
+                    android:id="@+id/tvDay"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/bg_pill"
+                    android:paddingStart="14dp"
+                    android:paddingEnd="14dp"
+                    android:paddingTop="4dp"
+                    android:paddingBottom="4dp"
+                    android:textColor="@color/navy"
+                    android:textSize="14sp"
+                    android:textStyle="bold" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/tvFace"
+                        android:layout_width="84dp"
+                        android:layout_height="84dp"
+                        android:background="@drawable/bg_avatar"
+                        android:gravity="center"
+                        android:includeFontPadding="false"
+                        android:textSize="46sp" />
+
+                    <TextView
+                        android:id="@+id/tvBubble"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="10dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/bg_bubble"
+                        android:padding="12dp"
+                        android:textColor="@color/text_main"
+                        android:textSize="15sp" />
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/tvActions"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:background="@drawable/bg_pill"
+                    android:paddingStart="12dp"
+                    android:paddingEnd="12dp"
+                    android:paddingTop="5dp"
+                    android:paddingBottom="5dp"
+                    android:textColor="@color/navy"
+                    android:textSize="13sp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+            <!-- สถานะวิกฤต (เพิ่มจากโค้ด) -->
+            <LinearLayout
+                android:id="@+id/llWarnings"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical" />
+
+            <!-- ค่าสถานะ 5 ค่า -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/bg_card"
+                android:orientation="vertical"
+                android:padding="14dp">
+
+                <include
+                    android:id="@+id/rowStudy"
+                    layout="@layout/item_stat"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+                <include
+                    android:id="@+id/rowEnergy"
+                    layout="@layout/item_stat"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+                <include
+                    android:id="@+id/rowHappy"
+                    layout="@layout/item_stat"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+                <include
+                    android:id="@+id/rowStress"
+                    layout="@layout/item_stat"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+                <include
+                    android:id="@+id/rowMoney"
+                    layout="@layout/item_stat"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+            </LinearLayout>
+
+            <!-- เมนูล่าง -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="14dp"
+                android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/navActivity"
+                style="@style/NavButton"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="4dp"
+                android:layout_marginEnd="4dp"
+                android:layout_weight="1"
+                android:text="📅\nกิจกรรม" />
+            <TextView
+                android:id="@+id/navStatus"
+                style="@style/NavButton"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="4dp"
+                android:layout_marginEnd="4dp"
+                android:layout_weight="1"
+                android:text="📊\nสถานะ" />
+            <TextView
+                android:id="@+id/navEvent"
+                style="@style/NavButton"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="4dp"
+                android:layout_marginEnd="4dp"
+                android:layout_weight="1"
+                android:text="🎲\nEvent" />
+            <TextView
+                android:id="@+id/navShop"
+                style="@style/NavButton"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="4dp"
+                android:layout_marginEnd="4dp"
+                android:layout_weight="1"
+                android:text="🛒\nShop" />
+            <TextView
+                android:id="@+id/navSave"
+                style="@style/NavButton"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="4dp"
+                android:layout_marginEnd="4dp"
+                android:layout_weight="1"
+                android:text="💾\nเซฟ" />
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

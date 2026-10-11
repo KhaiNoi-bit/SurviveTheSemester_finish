@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="BigButton">
+        <item name="android:textColor">#FFFFFF</item>
+        <item name="android:textSize">17sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:gravity">center</item>
+        <item name="android:paddingTop">15dp</item>
+        <item name="android:paddingBottom">17dp</item>
+        <item name="android:paddingStart">18dp</item>
+        <item name="android:paddingEnd">18dp</item>
+        <item name="android:shadowColor">#3C000000</item>
+        <item name="android:shadowDy">2</item>
+        <item name="android:shadowRadius">3</item>
+    </style>
+    <style name="Chip">
+        <item name="android:textColor">@color/text_main</item>
+        <item name="android:textSize">15sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:gravity">center</item>
+        <item name="android:padding">12dp</item>
+        <item name="android:background">@drawable/bg_chip</item>
+    </style>
+    <style name="NavButton">
+        <item name="android:textColor">@color/navy</item>
+        <item name="android:textSize">11sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:gravity">center</item>
+        <item name="android:paddingTop">10dp</item>
+        <item name="android:paddingBottom">12dp</item>
+        <item name="android:background">@drawable/bg_nav</item>
+    </style>
+    <style name="FieldLabel">
+        <item name="android:textColor">@color/gray</item>
+        <item name="android:textSize">13sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:letterSpacing">0.04</item>
+    </style>
+    <style name="CardTitle">
+        <item name="android:textColor">@color/text_main</item>
+        <item name="android:textSize">17sp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+</resources>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="navy">#183B63</color>
+    <color name="main_bg">#EAF4FF</color>
+    <color name="blue">#3A8DFF</color>
+    <color name="green">#2CC07A</color>
+    <color name="red">#FF6B6B</color>
+    <color name="yellow">#FFC857</color>
+    <color name="orange">#FF9F43</color>
+    <color name="teal">#2EC4B6</color>
+    <color name="purple">#7C6CFF</color>
+    <color name="bg_light">#F4F8FF</color>
+    <color name="text_main">#1D2A3A</color>
+    <color name="gray">#6F7E92</color>
+    <color name="card_white">#FFFFFF</color>
+    <color name="track">#E5EDF8</color>
+    <color name="chip_bg">#F2F7FF</color>
+    <color name="bubble_bg">#FFFFFF</color>
+    <color name="warn_bg">#FFF1EE</color>
+    <color name="input_bg">#FFFFFF</color>
+    <color name="input_stroke">#D4E0F0</color>
+    <color name="coin_text">#7A4B00</color>
+    <color name="card_stroke">#DCEBFF</color>
+    <color name="surface_soft">#F8FBFF</color>
+</resources>
